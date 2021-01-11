@@ -1,0 +1,34 @@
+@layout('layouts/master')
+
+@section('main')
+  <main>
+<form action="/auth/login" method="POST">
+    @!component('components.input', {
+      name: 'email',
+      text: 'Enter email',
+      type: 'email',
+      message:''
+    })
+  
+    @!component('components.input', {
+      name: 'password',
+      text: 'Enter password',
+      type: 'password',
+      message
+      :''
+    })
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" name="remember_me" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Default checkbox
+  </label>
+</div>
+  
+    @!component('components.button', {
+      text: 'Signup',
+      type: 'submit'
+    })
+  </form>
+
+</main>
+@endsection
