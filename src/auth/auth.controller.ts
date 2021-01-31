@@ -30,6 +30,7 @@ export class AuthController {
   salir(@Body() data: any, @Req() req, @Res() res: Response) {
     req.session.destroy();
     req.logout();
+    res.clearCookie('connect.sid');
     res.redirect('/');
   }
 }
